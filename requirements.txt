@@ -4,3 +4,6 @@ djangorestframework==3.16.1
 dotenv==0.9.9
 python-dotenv==1.1.1
 sqlparse==0.5.3
+djangorestframework-simplejwt==5.3.1   # JWT authentication
+django-cors-headers==4.3.1              # for frontend integration
+

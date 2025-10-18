@@ -1,0 +1,5 @@
+- user model : adding a custom user manager (so createsuperuser and registration via email works).
+- adding to requirements.txt:
+    djangorestframework-simplejwt==5.3.1   # JWT authentication
+    django-cors-headers==4.3.1              # for frontend integration
+- 
