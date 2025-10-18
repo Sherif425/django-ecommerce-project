@@ -209,6 +209,243 @@ All endpoints will return **JSON responses**.
    * DRF `ModelViewSet` and routers simplify CRUD operations.
 
 
+----------------------------------------------------------------------------------------------------------------
+Perfect 👌 — let’s finalize your **Capstone Submission Package**.
+
+---
+
+## 🧾 ② Final `README.md` for Submission
+
+Here’s a clean and well-documented version tailored for your **Django E-commerce API Capstone** (using Users + Products).
+You can copy this directly into your project root as `README.md`.
+
+---
+
+### 📘 **README.md**
+
+````markdown
+# 🛒 E-commerce API (Django REST Framework)
+
+This is a simple E-commerce API built with **Django** and **Django REST Framework** as part of the Capstone project.  
+It provides basic functionality for **user authentication** and **product management**.
+
+---
+
+## 🚀 Features
+
+### 👤 User Authentication
+- **Register new users**
+- **Login** with JWT tokens
+- **Logout** (blacklist or discard tokens)
+- **View / Update Profile**
+
+### 🛍️ Product Management
+- **Create / List / Update / Delete** products
+- **Categorize** products by category
+- **Public product listing** (accessible to everyone)
+- **Private product management** (requires authentication)
+
+---
+
+## 🏗️ Technologies Used
+
+- Python 3.12
+- Django 5.x
+- Django REST Framework
+- Simple JWT (for authentication)
+- PostgreSQL (can be replaced with SQLite)
+
+---
+
+## ⚙️ Installation and Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/django-ecommerce-project.git
+   cd django-ecommerce-project
+````
+
+2. **Create a virtual environment**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure environment variables**
+
+   Create a `.env` file in the project root:
+
+   ```bash
+   SECRET_KEY=your_secret_key_here
+   DB_NAME=ecommerce-be
+   DB_USER=ecommerce_user
+   DB_PASSWORD=changeme
+   DB_HOST=localhost
+   DB_PORT=5432
+   ```
+
+   *(You can also switch to SQLite by uncommenting the default DB settings in `settings.py`.)*
+
+5. **Apply migrations**
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+6. **Create a superuser**
+
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+7. **Run the development server**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+8. **Access the admin panel**
+
+   ```
+   http://127.0.0.1:8000/admin/
+   ```
+
+---
+
+## 🔑 API Endpoints
+
+### 👤 User Endpoints
+
+| Method    | Endpoint               | Description                |
+| --------- | ---------------------- | -------------------------- |
+| POST      | `/api/users/register/` | Register a new user        |
+| POST      | `/api/users/login/`    | Login and get JWT tokens   |
+| POST      | `/api/users/logout/`   | Logout and blacklist token |
+| GET       | `/api/users/profile/`  | View user profile          |
+| PUT/PATCH | `/api/users/profile/`  | Update user profile        |
+
+---
+
+### 🛍️ Product Endpoints
+
+| Method    | Endpoint              | Description                          |
+| --------- | --------------------- | ------------------------------------ |
+| GET       | `/api/products/`      | List all products                    |
+| POST      | `/api/products/`      | Create a new product (authenticated) |
+| GET       | `/api/products/{id}/` | Retrieve a single product            |
+| PUT/PATCH | `/api/products/{id}/` | Update a product                     |
+| DELETE    | `/api/products/{id}/` | Delete a product                     |
+
+---
+
+## 🔐 Authentication
+
+The project uses **JWT (JSON Web Tokens)** for secure user authentication.
+
+After login:
+
+```json
+{
+  "refresh": "your_refresh_token",
+  "access": "your_access_token"
+}
+```
+
+Use the access token in the `Authorization` header for protected endpoints:
+
+```
+Authorization: Bearer <access_token>
+```
+
+---
+
+## 🧪 Testing the API with Postman
+
+A ready-to-use Postman collection is included:
+➡️ `Ecommerce-API.postman_collection.json`
+
+Import it into Postman to test:
+
+* User registration/login/logout
+* Profile view/update
+* CRUD for products
+
+---
+
+## 🧰 Folder Structure
+
+```
+ecommerceProject/
+│
+├── ecommerceProject/        # Project settings
+│   ├── settings.py
+│   ├── urls.py
+│   └── ...
+│
+├── user/                    # User app
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── ...
+│
+├── products/                # Product app
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── ...
+│
+├── .env                     # Environment variables
+├── requirements.txt
+├── manage.py
+└── Ecommerce-API.postman_collection.json
+```
+
+---
+
+## 👨‍💻 Author
+
+**Sherif Mohamed**
+Capstone Project – ALX Backend Django
+2025
+
+```
+
+---
+
+## ✅ ③ Postman Collection Endpoints
+
+Here’s a summary of what’s inside your Postman collection (`Ecommerce-API.postman_collection.json`):
+
+### **Folders:**
+1. **Auth**
+   - `POST /api/users/register/`
+   - `POST /api/users/login/`
+   - `POST /api/users/logout/`
+   - `GET /api/users/profile/`
+   - `PUT /api/users/profile/`
+
+2. **Products**
+   - `GET /api/products/`
+   - `POST /api/products/`
+   - `GET /api/products/:id/`
+   - `PUT /api/products/:id/`
+   - `DELETE /api/products/:id/`
+
+All requests use `{{base_url}}` (e.g., `http://127.0.0.1:8000`) and JWT `Bearer` authorization for protected routes.
+
+---
+
+
 
 
 
