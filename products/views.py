@@ -10,7 +10,6 @@ class ProductListCreateView(generics.ListCreateAPIView):
     queryset = Product.objects.all().order_by('-created_at')
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
     def perform_create(self, serializer):
         # Automatically associate the product with the logged-in user
         serializer.save(owner=self.request.user)
