@@ -158,3 +158,5 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+INSTALLED_APPS += ['rest_framework_simplejwt.token_blacklist']
