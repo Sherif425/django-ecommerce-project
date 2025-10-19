@@ -435,11 +435,3 @@ Here’s a summary of what’s inside your Postman collection (`Ecommerce-API.po
 All requests use `{{base_url}}` (e.g., `http://127.0.0.1:8000`) and JWT `Bearer` authorization for protected routes.
 
 ---
-
-
-
-
-
-
-
-
