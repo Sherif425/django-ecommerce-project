@@ -6,7 +6,7 @@ class CategorySerializer(serializers.ModelSerializer):
     """Handles serialization for Category model"""
     class Meta:
         model = Category
-        fields = ['id', 'name', 'created_at', 'updated_at']
+        fields = ['id', 'name']  # only existing fields
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -17,12 +17,12 @@ class ProductSerializer(serializers.ModelSerializer):
         source='category',
         write_only=True
     )
-    created_by = serializers.ReadOnlyField(source='created_by.email')
+    owner = serializers.ReadOnlyField(source='owner.email')  # fixed from created_by
 
     class Meta:
         model = Product
         fields = [
-            'id', 'name', 'description', 'price', 'in_stock',
-            'category', 'category_id', 'created_by',
+            'id', 'name', 'description', 'price', 'stock',
+            'category', 'category_id', 'owner',
             'created_at', 'updated_at'
         ]
